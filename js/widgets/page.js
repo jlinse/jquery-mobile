@@ -15,6 +15,7 @@ $.widget( "mobile.page", $.mobile.widget, {
 	},
 
 	_create: function() {
+		var self = this;
 		// if false is returned by the callbacks do not create the page
 		if ( this._trigger( "beforecreate" ) === false ) {
 			return false;
@@ -27,6 +28,20 @@ $.widget( "mobile.page", $.mobile.widget, {
 		this._on( this.element, {
 			pagebeforehide: "removeContainerBackground",
 			pagebeforeshow: "_handlePageBeforeShow"
+		});
+		this.element.find("[data-role='content']").each( function(){
+			var $this = $( this ),
+				role = $this[ 0 ].getAttribute( attrPrefix + "role" ) || undefined,
+				attrPrefix = "data-" + $.mobile.ns,
+				theme = $this[ 0 ].getAttribute( attrPrefix + "theme" ) || undefined,
+				contentTheme = theme || null || ( self.element.jqmData("role") === "dialog" &&  self.options.theme );
+
+				if ( contentTheme ) {
+					$this.addClass( "ui-body-" + ( contentTheme ) );
+				}
+
+				// Add ARIA role
+				$this.attr( "role", "main" ).addClass("ui-content");
 		});
 	},
 

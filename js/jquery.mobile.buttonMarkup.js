@@ -277,7 +277,7 @@ var attachEvents = function() {
 //auto self-init widgets
 $.mobile.document.bind( "pagecreate create", function( e ) {
 
-	$( ":jqmData(role='button'), .ui-bar > a, .ui-header > a, .ui-footer > a, .ui-bar > :jqmData(role='controlgroup') > a", e.target )
+	$( ":jqmData(role='button'), .ui-bar > a, .ui-bar > :jqmData(role='controlgroup') > a", e.target )
 		.jqmEnhanceable()
 		.not( "button, input, .ui-btn, :jqmData(role='none'), :jqmData(role='nojs')" )
 		.buttonMarkup();

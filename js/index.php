@@ -36,6 +36,7 @@ $files = array(
 	'transitions/flow.js',
 	'transitions/turn.js',
 	'jquery.mobile.degradeInputs.js',
+	'widgets/toolbar.js',
 	'widgets/dialog.js',
 	'widgets/page.sections.js',
 	'widgets/collapsible.js',
@@ -62,7 +63,6 @@ $files = array(
 	'jquery.mobile.links.js',
 	'widgets/fixedToolbar.js',
 	'widgets/fixedToolbar.workarounds.js',
-	'widgets/panel.js',
 	'widgets/popup.js',
 	'widgets/popup.arrow.js',
 	'widgets/table.js',
@@ -70,7 +70,8 @@ $files = array(
 	'widgets/table.reflow.js',
 	'jquery.mobile.zoom.js',
 	'jquery.mobile.zoom.iosorientationfix.js',
-	'jquery.mobile.init.js'
+	'jquery.mobile.init.js',
+	'widgets/panel.js'
 );
 
 function getGitHeadPath() {
